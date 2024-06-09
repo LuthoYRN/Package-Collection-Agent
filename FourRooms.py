@@ -16,8 +16,8 @@ class FourRooms:
     BORDER = -1
     EMPTY = 0
     RED = 1
-    BLUE = 2
-    GREEN = 3
+    GREEN = 2
+    BLUE = 3
 
     custom_cmap = colors.LinearSegmentedColormap.from_list('', ['black', 'white', 'red', 'green', 'blue', 'pink',
                                                                 'violet'])
