@@ -1,28 +1,41 @@
-## Neural Network Classifier for MNIST Dataset
+## Reinforcement Learning Agent for FourRooms Environment
 
 ### Overview
-This project implements a neural network classifier for recognizing hand-written digits using the MNIST dataset. The neural network architecture consists of two hidden layers with ReLU activation functions and a softmax output layer for multi-class classification.
+This project implements a reinforcement learning agent to navigate and collect packages in the FourRooms environment. The agent learns through Q-learning, updating its Q-values based on rewards received from the environment. Three scenarios are considered: simple package collection, multiple package collection, and ordered multiple package collection.
 
 ### Files
-- **classifier.py**: Contains the implementation of the neural network model, training, and inference functions. It also handles user input for making predictions on custom images.
-- **log.txt**: Logs the training progress, including training loss, validation accuracy, and final accuracy on the test set for each epoch.
-- **Makefile**: Provides a command to run the classifier python script
+- **FourRooms.py**: Contains the implementation of the FourRooms environment class, including functions for taking actions, initializing the environment, and displaying the path.
+- **Scenario1.py**: Implements the agent for the simple package collection scenario.
+- **Scenario2.py**: Implements the agent for the multiple package collection scenario.
+- **Scenario3.py**: Implements the agent for the ordered multiple package collection scenario.
+- **requirements.txt**: Contains library names needed for code to work
+- **Makefile**: Has commands for setting up a virtual environment and running the different scripts
+- **Images/** : Has images generated for all scenarios
 
 ### Usage
-1. **Dependencies**: Ensure you have Python 3.x, PyTorch, torchvision, and PIL (Python Imaging Library) installed on your system.
-2. **Run Classifier**: Navigate to the directory containing `makefile` and `classifier.py` in a command line interface.
-3. **Execute Command**: Enter the command `make run` to run `classifier.py`.
-4. **Training and Evaluation**: The script will train the model and evaluate its performance on a validation set and then a test set ,log.txt will be ovewritten with current model's training losses and validation accuracy per epoch. Model accuracy per epoch will be displayed until the training process is finished.
-5. **Inference**: After training, you will be prompted to enter the path of an image file (.jpg) you want to classify. Enter the relative path or type "exit" to quit the program.
-6. **Output**: The program will classify the image and display the predicted label.
+1. **Navigate to the Project Directory**: Open a terminal and change the directory to where the project files are located.
+
+2. **Setup**: Ensure you have Python 3 installed on your system.
+              Create a virtual environment with installed dependancies using `make setup`
+
+3. **Execute Scenario File**: Run the desired scenario file (Scenario1.py, Scenario2.py, or Scenario3.py) using the makefile command
+ `make run1` for Scenario1.py
+ `make run2` for Scenario2.py
+ `make run3` for Scenario3.py
+
+ **running scenarios with stochastic flag**
+ `make run1 FLAG=-stochastic` for a stochastic Scenario1.py
+ `make run2 FLAG=-stochastic` for a stochastic Scenario2.py
+ `make run3 FLAG=-stochastic` for a stochastic Scenario3.py
+ 
+4. **Training**: The script will train the reinforcement learning agent in the specified scenario for a predefined number of epochs, updating the Q-values based on rewards received.
+5. **Visualization**: After training, the script will save the final path taken by the agent in the FourRooms environment under the images folder.
 
 ### Requirements
 - Python 3.x
-- PyTorch
-- torchvision
-- PIL (Python Imaging Library)
 
 ### Note
-- The project assumes that the MNIST dataset is stored in the "MNIST data/" directory. Ensure the dataset is properly downloaded and accessible to the script.
+- Ensure the FourRooms environment class (FourRooms.py) is accessible to the scenario files.
+- Ensure you setup an environment using `make setup`
 
-## Development on Windows 11
+## Developed on Nightmare
