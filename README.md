@@ -21,7 +21,7 @@ This project implements a reinforcement learning agent to navigate and collect p
 - **Images/**: Contains images generated for all scenarios.
 
 ## 📸 Screenshots
-<div style=""display:flex;flex-direction:row;justify-content:space-between;>
+<div style="display:flex;flex-direction:row;justify-content:space-between;">
 <img src="images/scenario1.png" width="33%">
 <img src="images/scenario2.png" width="33%">
 <img src="images/scenario3.png" width="33%">
